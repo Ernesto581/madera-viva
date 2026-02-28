@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { TreePine, Menu, X } from "lucide-react";
+import { TreePine, Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useDarkMode } from "@/hooks/use-dark-mode";
 
 const links = [
   { href: "#maderas", label: "Maderas" },
@@ -12,6 +13,7 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { dark, toggle: toggleDark } = useDarkMode();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -48,16 +50,36 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <button
+            onClick={toggleDark}
+            className={`p-2 rounded-lg transition-colors ${
+              scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10"
+            }`}
+            aria-label={dark ? "Activar modo claro" : "Activar modo oscuro"}
+          >
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggleDark}
+            className={`p-2 rounded-lg transition-colors ${
+              scrolled ? "text-muted-foreground hover:text-foreground" : "text-primary-foreground/80 hover:text-primary-foreground"
+            }`}
+            aria-label={dark ? "Activar modo claro" : "Activar modo oscuro"}
+          >
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+        <button onClick={() => setOpen(!open)}>
           {open ? (
             <X className={scrolled ? "text-foreground" : "text-primary-foreground"} />
           ) : (
             <Menu className={scrolled ? "text-foreground" : "text-primary-foreground"} />
           )}
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
