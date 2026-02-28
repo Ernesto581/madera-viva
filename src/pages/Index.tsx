@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WoodCatalog from "@/components/WoodCatalog";
+import WoodFacts from "@/components/WoodFacts";
 import ToolsSection from "@/components/ToolsSection";
 import TechniquesSection from "@/components/TechniquesSection";
 import WoodQuiz from "@/components/WoodQuiz";
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <WoodCatalog />
+      <WoodFacts />
       <ToolsSection />
       <TechniquesSection />
       <WoodQuiz />
