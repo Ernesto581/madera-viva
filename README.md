@@ -114,15 +114,3 @@ madera-viva/
 3. Realiza tus cambios y haz commit: `git commit -m "feat: agregar nueva feature"`.
 4. Sube tu rama: `git push origin feature/mi-nueva-feature`.
 5. Abre un Pull Request.
-
----
-
-## 👤 Autor
-
-**Ernesto Linares** — [@Ernesto581](https://github.com/Ernesto581)
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia [MIT](LICENSE).
