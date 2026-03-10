@@ -66,21 +66,6 @@ npm run dev
 
 La app estará disponible en `http://localhost:8080`.
 
----
-
-## 📜 Scripts disponibles
-
-| Comando | Descripción |
-|---|---|
-| `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run build` | Genera el build de producción |
-| `npm run build:dev` | Build en modo desarrollo |
-| `npm run preview` | Preview del build generado |
-| `npm run lint` | Ejecuta ESLint |
-| `npm run test` | Ejecuta tests con Vitest |
-| `npm run test:watch` | Tests en modo watch |
-
----
 
 ## 📂 Estructura del proyecto
 
